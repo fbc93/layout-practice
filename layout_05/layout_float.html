@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout_05 : Float Layout</title>
+  <style>
+    /* Color */
+    :root {
+      --header-bg-color: #EEEBE9;
+      --nav-bg-color: #B9AAA5;
+      --main-bg-color: #886F66;
+      --cont-1-bg-color: #745749;
+      --cont-2-bg-color: #684D43;
+      --cont-3-bg-color: #594139;
+      --cont-4-bg-color: #4B352F;
+      --footer-bg-color: #4E342E;
+      --container-bg-color: rgba(0,0,0,0.1);
+    }
+
+    /* Reset */
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* Style */
+    #header {
+      width: 100%;
+      height: 100px;
+      background-color: var(--header-bg-color);
+    }
+
+    #nav {
+      width: 100%;
+      height: 100px;
+      background-color: var(--nav-bg-color);
+    }
+
+    #main {
+      width: 100%;
+      height: 780px;
+      background-color: var(--main-bg-color);
+    }
+
+    #footer {
+      width: 100%;
+      height: 100px;
+      background-color: var(--footer-bg-color);
+    }
+
+    .container {
+      width: 1200px;
+      height: inherit;
+      margin: 0 auto;
+      background-color: var(--container-bg-color);
+    }
+
+    .contents {}
+
+    .cont1 {
+      width: 100%;
+      height: 100px;
+      background-color: var(--cont-1-bg-color);
+    }
+
+    .cont2 {
+      width: 100%;
+      height: 200px;
+      background-color: var(--cont-2-bg-color);
+    }
+
+    .cont3 {
+      width: 50%;
+      height: 480px;
+      float: left;
+      background-color: var(--cont-3-bg-color);
+    }
+
+    .cont4 {
+      width: 50%;
+      height: 480px;
+      float: left;
+      background-color: var(--cont-4-bg-color);
+    }
+
+    /* Responsive Layout Design : Media Query */
+    @media (max-width: 1300px) {
+
+      .container {
+        width: 96%;
+      }
+
+      .cont1 {
+        width: 40%;
+        height: 780px;
+        float: left;
+      }
+
+      .cont2 {
+        width: 60%;
+        height: 390px;
+        float: left;
+      }
+
+      .cont3 {
+        width: 30%;
+        height: 390px;
+        float: left;
+      }
+
+      .cont4 {
+        width: 30%;
+        height: 390px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 100%;
+      }
+
+      .cont2 {
+        width: 60%;
+        height: 260px;
+      }
+
+      .cont3 {
+        width: 60%;
+        height: 260px;
+      }
+
+      .cont4 {
+        width: 60%;
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #main {
+        height: 980px;
+      }
+
+      .cont1 {
+        width: 100%;
+        height: 200px;
+      }
+
+      .cont2 {
+        width: 100%;
+      }
+
+      .cont3 {
+        width: 100%;
+      }
+
+      .cont4 {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header id="header">
+      <div class="container"></div>
+    </header>
+    <nav id="nav">
+      <div class="container"></div>
+    </nav>
+    <main id="main">
+      <div class="contents container">
+        <div class="cont1"></div>
+        <div class="cont2"></div>
+        <div class="cont3"></div>
+        <div class="cont4"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="container"></div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout_05 : Grid Layout</title>
+  <style>
+    /* Color */
+    :root {
+      --header-bg-color: #EEEBE9;
+      --nav-bg-color: #B9AAA5;
+      --main-bg-color: #886F66;
+      --cont-1-bg-color: #745749;
+      --cont-2-bg-color: #684D43;
+      --cont-3-bg-color: #594139;
+      --cont-4-bg-color: #4B352F;
+      --footer-bg-color: #4E342E;
+      --container-bg-color: rgba(0,0,0,0.1);
+    }
+
+    /* Reset */
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* Style */
+    #header {
+      width: 100%;
+      height: 100px;
+      background-color: var(--header-bg-color);
+    }
+
+    #nav {
+      width: 100%;
+      height: 100px;
+      background-color: var(--nav-bg-color);
+    }
+
+    #main {
+      width: 100%;
+      height: 780px;
+      background-color: var(--main-bg-color);
+    }
+
+    #footer {
+      width: 100%;
+      height: 100px;
+      background-color: var(--footer-bg-color);
+    }
+
+    .container {
+      width: 1200px;
+      height: inherit;
+      margin: 0 auto;
+      background-color: var(--container-bg-color);
+    }
+
+    .contents {
+      display: grid;
+      grid-template-areas: 
+        "cont1 cont1"
+        "cont2 cont2"
+        "cont3 cont4"
+      ;
+
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 100px 290px 390px;
+    }
+
+    .cont1 {
+      grid-area: cont1;
+      background-color: var(--cont-1-bg-color);
+    }
+
+    .cont2 {
+      grid-area: cont2;
+      background-color: var(--cont-2-bg-color);
+    }
+
+    .cont3 {
+      grid-area: cont3;
+      background-color: var(--cont-3-bg-color);
+    }
+
+    .cont4 {
+      grid-area: cont4;
+      background-color: var(--cont-4-bg-color);
+    }
+
+    /* Responsive Layout Design : Media Query */
+    @media (max-width: 1300px) {
+      .container {
+        width: 96%;
+      }
+
+      #main {
+        height: 1070px;
+      }
+
+      .contents {
+        display: grid;
+        grid-template-areas: 
+          "cont1 cont2 cont2"
+          "cont1 cont3 cont3"
+          "cont4 cont4 cont4"
+        ;
+
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 390px 390px 290px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 100%;
+      }
+
+      .contents {
+        display: grid;
+        grid-template-areas: 
+          "cont1"
+          "cont2"
+          "cont3"
+          "cont4"
+        ;
+
+        grid-template-columns: 100%;
+        grid-template-rows: 290px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header id="header">
+      <div class="container"></div>
+    </header>
+    <nav id="nav">
+      <div class="container"></div>
+    </nav>
+    <main id="main">
+      <div class="contents container">
+        <div class="cont1"></div>
+        <div class="cont2"></div>
+        <div class="cont3"></div>
+        <div class="cont4"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="container"></div>
+    </footer>
+  </div>
+</body>
+</html>
